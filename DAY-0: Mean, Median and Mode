@@ -1,0 +1,29 @@
+#Approach-1: By calling Python Built-in libraries.
+import numpy
+from scipy import stats
+size = int(input())
+numbers = list(map(int, input().split()))
+print(np.mean(numbers))
+print(np.median(numbers))
+print(int(stats.mode(numbers)[0]))
+
+#Approach-2: By using numerical methods.
+
+number_of_elements = int(input('n= '))
+array_of_numbers = list(map(int, input().split()))
+
+list.sort(array_of_numbers)
+
+sum_of_elements = sum(array_of_numbers)
+print(sum_of_elements/number_of_elements)
+
+if number_of_elements % 2 == 0:
+    median1 = array_of_numbers[number_of_elements // 2]
+    median2 = array_of_numbers[number_of_elements // 2 - 1]
+    median = (median1 + median2) / 2
+else:
+    median = array_of_numbers[number_of_elements // 2]
+print(median)
+
+mode = max(array_of_numbers, key= array_of_numbers.count)
+print(mode)
